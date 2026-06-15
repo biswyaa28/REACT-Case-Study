@@ -1,16 +1,47 @@
-# React + Vite
+# StockPulse - React Case Study
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time investment tracking dashboard built with React 19, demonstrating modern React patterns and performance optimization techniques.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Real-Time Price Ticker** — Simulated live stock price updates every 800ms with price flash animations (green/red)
+- **Custom Watchlist Organizer** — Drag-and-drop reordering of favorite stocks with mini price sparkline charts
+- **Trade Limit Checker** — Execute buy/sell trades with configurable trade limits and balance validation
+- **Lag-Free Transaction History** — Virtualized scrolling for smooth rendering of 1000+ transaction records
+- **Investor Account Details** — Portfolio valuation, net worth calculation, and account profile display
+- **Calculation Safety Net** — Error boundary that gracefully catches and reports rendering errors in financial calculations
 
-## React Compiler
+## Performance Optimizations
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `React.memo` — Transaction rows skip re-renders when props haven't changed
+- `useMemo` — Memoized portfolio calculations, filtered transactions, and chart data generation
+- `useCallback` — Stable scroll handler reference prevents unnecessary effect re-runs
+- `SmartWrapper` — Targeted re-render isolation for ticker items prevents cascading updates
+- Virtual scrolling — Only visible transaction rows are rendered (buffer of 5 on each side)
+- `ResizeObserver` — Dynamic container height measurement adapts to layout changes
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React 19** — Hooks (`useState`, `useEffect`, `useMemo`, `useCallback`, `useRef`)
+- **@dnd-kit** — Drag-and-drop watchlist reordering
+- **Recharts** — Mini sparkline price charts
+- **Vite** — Fast development server and build tool
+
+## Getting Started
+
+```bash
+cd stockpulse
+npm install
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Production Build
+
+```bash
+npm run build
+npm run preview
+```
+
+Open [http://localhost:4173](http://localhost:4173) to preview the production build.

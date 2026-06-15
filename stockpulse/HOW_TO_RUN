@@ -1,0 +1,30 @@
+StockPulse - How to Run
+========================
+
+Prerequisites:
+  - Node.js 18+ installed
+
+Steps:
+
+1. Navigate to the project directory:
+   cd stockpulse
+
+2. Install dependencies:
+   npm install
+
+3. Start the development server:
+   npm run dev
+
+4. Open your browser and visit:
+   http://localhost:5173
+
+Alternative - Production Build:
+
+1. Build the project:
+   npm run build
+
+2. Preview the production build:
+   npm run preview
+
+3. Visit:
+   http://localhost:4173

@@ -45,3 +45,20 @@ npm run preview
 ```
 
 Open [http://localhost:4173](http://localhost:4173) to preview the production build.
+
+## Screenshots
+
+### Overview Tab
+![Overview Tab](screenshots/1.png)
+
+### Watchlist Tab
+![Watchlist Tab](screenshots/2.png)
+
+### Trade Tab
+![Trade Tab](screenshots/3.png)
+
+### History Tab
+![History Tab](screenshots/4.png)
+
+### Account Tab
+![Account Tab](screenshots/5.png)
